@@ -14,6 +14,16 @@ h1, h2, h3, p, ul {
     padding-bottom: 2px;
 }
 
+a {
+    text-decoration: none;
+    color: rgba(7, 94, 143, 0.8);
+    font-weight: bold;
+}
+
+li {
+    margin-left: -10px;
+}
+
 /* Style the container */
 .container {
     display: flex;
@@ -152,8 +162,7 @@ svg:hover {
     color: rgba(188, 227, 255, 0.89);
 }
 
-a {
-    text-decoration: none;
-    color: rgba(7, 94, 143, 0.8);
-    font-weight: bold;
+.image_container {
+    border: dimgrey solid 1px;
+    border-radius: 10%;
 }
