@@ -1,0 +1,159 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right bottom, #111111 0%, #444444 60%);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, p, ul {
+    margin: 0;
+    padding-bottom: 2px;
+}
+
+/* Style the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 1000px; /* Set the width to 1000px */
+    margin: 0 auto; /* Center the container horizontally */
+    row-gap: 8px;
+}
+
+/* Style each row */
+.row {
+    display: flex;
+    position: relative;
+}
+
+/* Create the 3D shadow effect using box shadows */
+.box::before, .box_separate::before {
+    position: absolute;
+    width: 6px;
+    margin-top: 6px;
+    top: 0;
+    left: -6px;
+    background: #8c8c8c;
+    content: "";
+    display: block;
+    transform: skew(0deg, -61deg);
+    height: 100%;
+}
+
+.box:after, .box_separate:after {
+    position: absolute;
+    width: 100%;
+    margin-top: 0;
+    bottom: -11px;
+    left: -2px;
+    background: rgba(80, 80, 80, 0.8);
+    content: "";
+    display: block;
+    transform: skew(-31deg, 0deg);
+    height: 10px;
+}
+
+/* Style the boxes */
+.box {
+    flex: 1; /* Each box takes equal space within its row */
+    padding: 15px;
+    background-color: rgb(197, 197, 197);
+}
+
+.box_separate {
+    flex: 1; /* Each box takes equal space within its row */
+    padding: 15px;
+    margin-right: 9px;
+    background-color: rgb(197, 197, 197);
+    position: relative;
+}
+
+.row .box_separate:last-child {
+    margin-right: 0;
+}
+
+.photo {
+    flex: 20%;
+}
+
+.name {
+    flex: 65%;
+}
+
+.round-photo {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 7px rgb(79, 87, 112);
+    transition: filter 0.3s; /* Add a smooth transition */
+}
+
+.round-photo:hover {
+    filter: drop-shadow(3px 3px 7px rgba(75, 75, 75, 0.8));
+}
+
+.contacts a {
+    display: flex;
+    text-decoration: none;
+    color: rgb(39, 51, 89);
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    margin: 0 var(--spacing, 0px);
+    transition: margin .25s;
+}
+
+/* Style the icons */
+.link_style i {
+    margin: 0 10px 3px;
+    font-size: 20px;
+}
+
+.link_style span {
+    display: inline-block;
+    width: 80px; /* Adjust the width as needed for consistent spacing */
+}
+
+svg {
+    width: 90px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-40%, 7px) translateZ(0);
+    fill: none;
+    stroke: var(--stroke, rgb(197, 197, 197));
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke-dasharray: var(--offset, 69px) 278px;
+    stroke-dashoffset: 361px;
+    transition: stroke .25s ease var(--stroke-delay, 0s), stroke-dasharray .35s;
+}
+
+svg:hover {
+    --spacing: 4px;
+    --stroke: rgba(14, 58, 84, 0.8);
+    --stroke-delay: .1s;
+    --offset: 180px;
+}
+
+.language-links {
+    position: absolute;
+    color: rgba(35, 65, 80, 0.8);
+    top: 20px;
+    left: 20px;
+}
+
+.language-links a {
+    text-decoration: none;
+    color: rgba(188, 227, 255, 0.89);
+}
+
+a {
+    text-decoration: none;
+    color: rgba(7, 94, 143, 0.8);
+    font-weight: bold;
+}
