@@ -5,8 +5,13 @@ html, body {
 }
 
 body {
-    background-image: linear-gradient(to right bottom, #111111 0%, #444444 60%);
+    background-image: linear-gradient(0.25turn, #111111 0%, #444444 60%);
     font-family: 'Roboto', sans-serif;
+}
+
+body > * {
+    flex: 1;
+    height: 100%;
 }
 
 h1, h2, h3, p, ul {
@@ -21,19 +26,21 @@ a {
 }
 
 li {
-    margin-left: -10px;
+    margin-left: -12px;
 }
 
-/* Style the container */
+.li_padding {
+    padding-bottom: 10px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    width: 1000px; /* Set the width to 1000px */
-    margin: 0 auto; /* Center the container horizontally */
+    width: 1200px;
+    margin: 0 auto;
     row-gap: 8px;
 }
 
-/* Style each row */
 .row {
     display: flex;
     position: relative;
@@ -66,15 +73,23 @@ li {
     height: 10px;
 }
 
+/* Adjust the brightness on hover */
+.box:hover::before,
+.box_separate:hover::before,
+.box:hover:after,
+.box_separate:hover:after {
+    filter: brightness(1.2);
+}
+
 /* Style the boxes */
 .box {
-    flex: 1; /* Each box takes equal space within its row */
+    flex: 1;
     padding: 15px;
     background-color: rgb(197, 197, 197);
 }
 
 .box_separate {
-    flex: 1; /* Each box takes equal space within its row */
+    flex: 1;
     padding: 15px;
     margin-right: 9px;
     background-color: rgb(197, 197, 197);
@@ -83,6 +98,12 @@ li {
 
 .row .box_separate:last-child {
     margin-right: 0;
+}
+
+.box_info {
+    flex: 1;
+    padding: 5px;
+    background-color: rgb(197, 197, 197);
 }
 
 .photo {
@@ -98,7 +119,7 @@ li {
     width: 200px;
     height: 200px;
     box-shadow: 0 0 7px rgb(79, 87, 112);
-    transition: filter 0.3s; /* Add a smooth transition */
+    transition: filter 0.3s;
 }
 
 .round-photo:hover {
@@ -116,7 +137,6 @@ li {
     transition: margin .25s;
 }
 
-/* Style the icons */
 .link_style i {
     margin: 0 10px 3px;
     font-size: 20px;
@@ -124,7 +144,7 @@ li {
 
 .link_style span {
     display: inline-block;
-    width: 80px; /* Adjust the width as needed for consistent spacing */
+    width: 80px;
 }
 
 svg {
