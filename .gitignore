@@ -42,3 +42,5 @@ requirements_dev.txt
 *.bak
 *.log
 *.sqlite3
+oldstyles.css
+index_old.html

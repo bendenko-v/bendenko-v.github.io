@@ -1,130 +1,119 @@
-html, body {
-    height: 100%;
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #40434d;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-body {
-    background-image: linear-gradient(0.25turn, #111111 0%, #444444 60%);
-    font-family: 'Roboto', sans-serif;
-}
-
-body > * {
-    flex: 1;
-    height: 100%;
-}
-
-h1, h2, h3, p, ul {
-    margin: 0;
-    padding-bottom: 2px;
 }
 
 a {
     text-decoration: none;
     color: rgba(7, 94, 143, 0.8);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-li {
-    margin-left: -12px;
+a:hover {
+    color: rgba(38, 148, 243, 0.9);
 }
 
-.li_padding {
-    padding-bottom: 10px;
+.date {
+    color: #888;
+    font-weight: normal;
 }
 
 .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #eaeaea;
+}
+
+.profile {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.profile img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.contact {
+    flex: 1;
+}
+
+.section {
+    margin-bottom: 10px;
+}
+
+.company {
+    color: rgb(39, 51, 89);
+    font-weight: bold;
+    font-size: larger;
+}
+
+.vacancy {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(225, 225, 225, 0.8);
+    padding-top: 10px;
+    padding-left: 10px;
+    line-height: 1.1;
+}
+
+.pad-bottom {
+    padding-bottom: 10px;
+}
+
+h3 {
+    display: inline;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ababab;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: disc;
+    padding: 0;
+}
+
+ul.info li {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+
+.bold-text {
+    display: block;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+.contacts {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
-    width: 1200px;
-    margin: 0 auto;
-    row-gap: 8px;
+    margin-top: 22px;
+    padding: 0;
 }
 
-.row {
-    display: flex;
-    position: relative;
-}
-
-/* Create the 3D shadow effect using box shadows */
-.box::before, .box_separate::before {
-    position: absolute;
-    width: 6px;
-    margin-top: 6px;
-    top: 0;
-    left: -6px;
-    background: #8c8c8c;
-    content: "";
-    display: block;
-    transform: skew(0deg, -61deg);
-    height: 100%;
-}
-
-.box:after, .box_separate:after {
-    position: absolute;
-    width: 100%;
-    margin-top: 0;
-    bottom: -11px;
-    left: -2px;
-    background: rgba(80, 80, 80, 0.8);
-    content: "";
-    display: block;
-    transform: skew(-31deg, 0deg);
-    height: 10px;
-}
-
-/* Adjust the brightness on hover */
-.box:hover::before,
-.box_separate:hover::before,
-.box:hover:after,
-.box_separate:hover:after {
-    filter: brightness(1.2);
-}
-
-/* Style the boxes */
-.box {
-    flex: 1;
-    padding: 15px;
-    background-color: rgb(197, 197, 197);
-}
-
-.box_separate {
-    flex: 1;
-    padding: 15px;
-    margin-right: 9px;
-    background-color: rgb(197, 197, 197);
-    position: relative;
-}
-
-.row .box_separate:last-child {
-    margin-right: 0;
-}
-
-.box_info {
-    flex: 1;
-    padding: 5px;
-    background-color: rgb(197, 197, 197);
-}
-
-.photo {
-    flex: 20%;
-}
-
-.name {
-    flex: 65%;
-}
-
-.round-photo {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 0 7px rgb(79, 87, 112);
-    transition: filter 0.3s;
-}
-
-.round-photo:hover {
-    filter: drop-shadow(3px 3px 7px rgba(75, 75, 75, 0.8));
-}
 
 .contacts a {
     display: flex;
@@ -135,6 +124,13 @@ li {
     position: relative;
     margin: 0 var(--spacing, 0px);
     transition: margin .25s;
+}
+
+.link_style {
+    text-decoration: none;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
 }
 
 .link_style i {
@@ -155,7 +151,7 @@ svg {
     bottom: 0;
     transform: translate(-40%, 7px) translateZ(0);
     fill: none;
-    stroke: var(--stroke, rgb(197, 197, 197));
+    stroke: var(--stroke, rgb(234, 234, 234));
     stroke-linecap: round;
     stroke-width: 2px;
     stroke-dasharray: var(--offset, 69px) 278px;
@@ -170,19 +166,15 @@ svg:hover {
     --offset: 180px;
 }
 
-.language-links {
-    position: absolute;
-    color: rgba(35, 65, 80, 0.8);
-    top: 20px;
-    left: 20px;
+.skill {
+    padding: 4px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: rgba(163, 197, 225, 0.6);
 }
 
-.language-links a {
-    text-decoration: none;
-    color: rgba(188, 227, 255, 0.89);
-}
-
-.image_container {
-    border: dimgrey solid 1px;
-    border-radius: 10%;
+.skills {
+    margin-bottom: 5px;
 }
